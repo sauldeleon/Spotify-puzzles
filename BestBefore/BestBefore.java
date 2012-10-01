@@ -8,7 +8,11 @@ public class BestBefore {
 
 	private static int a, b, c;
 	private static String fYear, fMonth, fDay;
-
+	/**
+	 * 
+	 * @author Saúl de León Guerrero, sauldeleonguerrero@gmail.com
+	 * @params args
+	 */
 	public static void main(String[] args) {
 		String dateInput = "";
 		try {
