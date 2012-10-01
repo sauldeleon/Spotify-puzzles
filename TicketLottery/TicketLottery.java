@@ -13,14 +13,22 @@ public class TicketLottery {
 												// winner is allowed to buy.
 		int people = Integer.valueOf(args[3]); // the number of people in your
 												// group.
+		if ((1 <= total && total <= 1000) && (1 <= winners && winners <= total)
+				&& (1 <= tickets && tickets <= 100)
+				&& (1 <= people && people <= total)) {
 
-		double m1 =(double) people / tickets;
-		int minTickets = (int) Math.round(Math.ceil(m1));
-		double prob = 0;
-		for (int i = minTickets; i < people + 1; i++) {
-			prob += hypergDistr(total, people, winners, i);
-		}
-		System.out.println(prob);
+			int minTickets = (int) Math.round(Math.ceil((double) people / tickets));
+			double prob = 0;
+			for (int i = minTickets; i < people + 1; i++) {
+				prob += hypergDistr(total, people, winners, i);
+			}
+			System.out.println(prob);
+		} else
+			try {
+				throw new Exception("Data input error!");
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
 	}
 
 	/**
@@ -59,7 +67,9 @@ public class TicketLottery {
 	public static double hypergDistr(int N, int m, int n, int k) {
 		double a = binCoeff(m, k);
 		double b = binCoeff(N - m, n - k);
+		
 		double c = binCoeff(N, n);
+		
 		double sol = a * b / c;
 		return sol;
 	}
