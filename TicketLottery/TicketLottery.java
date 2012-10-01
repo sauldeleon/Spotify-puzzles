@@ -1,3 +1,5 @@
+import java.text.DecimalFormat;
+
 public class TicketLottery {
 
 	/**
@@ -22,7 +24,8 @@ public class TicketLottery {
 			for (int i = minTickets; i < people + 1; i++) {
 				prob += hypergDistr(total, people, winners, i);
 			}
-			System.out.println(prob);
+			DecimalFormat f = new DecimalFormat("#.##########");
+			System.out.println(f.format(prob));
 		} else
 			try {
 				throw new Exception("Data input error!");
