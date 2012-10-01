@@ -3,6 +3,7 @@ import java.text.DecimalFormat;
 public class TicketLottery {
 
 	/**
+	 * @author Saúl de León Guerrero, sauldeleonguerrero@gmail.com
 	 * @param args
 	 */
 	public static void main(String[] args) {
